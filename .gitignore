@@ -1,0 +1,6 @@
+## ignora a pasta vscode do meu compilador
+/.vscode
+
+
+## ignora os arquivos compilados localmente para não subir no git
+*.exe
