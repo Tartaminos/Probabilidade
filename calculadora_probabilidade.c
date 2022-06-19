@@ -1,40 +1,52 @@
 #include <stdio.h>
 
-void binomial_individual(){
+int binomial_individual(){
     printf("to na binomial individual");
 }
 
-void binomial_acumulada(){
+int binomial_acumulada(){
     printf("to na binomial acumulada");
 }
 
-int main(void){
-    int opcao, x, C, n, p, q, controle_menu;
+int menu (void){
+    int menu_control = 1, x, C, n, p, q, option;
 
     printf("Selecione a opção desejada: \n");
     printf("1 - Probabilidade Binomial Individual \n");
     printf("2 - Probabilidade Binomial Acumulada \n");
-    printf("0 - Sair \n");
-    scanf("%d", opcao);
+    printf("3 - Sair \n");
+    scanf("%d", &option);
 
-    while (controle_menu != 0) {
-        if (opcao == 1) {
+    while (menu_control != 0) {
+        if (option == 1) {
             printf("digite as entradas que não sei qual é: \n");
-            scanf("%d", x);
+            scanf("%d", &x);
             binomial_individual();
-        } else if (opcao == 2)
+            menu();
+
+        } else if (option == 2)
         {
             printf("digite as entradas que não sei qual é: \n");
-            scanf("%d", x);
+            scanf("%d", &x);
             binomial_acumulada();
-        } else if (opcao == 3)
+            menu();
+        } else if (option == 3)
         {
-            controle_menu = 0;
+            printf("aqui é pra sair do programa");
+            menu_control = 0;
+            break;
         } else {
             printf("Entrada inválida");
+            menu();
         }
     }
     
+    return 0;
+}
+
+int main(void){
+
+    menu();   
     
     return 0;
 }
